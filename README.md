@@ -7,7 +7,7 @@ React is one of the most popular web frameworks in the world! It's really, reall
 - Understand how JavaScript interacts with the DOM via DOM manipulation
 - Understand the difference between imperative and declarative code
 
-## 
+## Web Languages
 The 3 Main languages of the web are:
 1. HTML: the structure
 2. CSS: the style
@@ -46,9 +46,24 @@ This rule would overwrite the first rule and our paragraph element would be blue
 ![specificity chart](https://sites.google.com/site/csskungfu/_/rsrc/1221742532694/specificity/specificity.gif)
  
 ### JS
+JavaScript controls the behavior of elements - it decides what things _do_. There's a lot of wariness around JavaScript, but it has undergone an incredible transformation in the last 5 years. The advent of ES2015/ES6 introduced tons of modern features that make programming in JavaScript much easier.
 
 ### Coming Together
 ![its all coming together meme](https://i.kym-cdn.com/photos/images/original/001/561/446/27d.jpg)
+
 Back in the old days it was _really_ important to separate concerns. Javascript stays in `.js` files and HTML stays in `.html` files and never the twain shall meet.
 
 _But what about script tags (`<script/>`) and `onclick` attributes?_ I hear you ask. Good question. These are antipatterns and in traditional web development this was frowned upon. This is _very_ different from how React and JSX operates. 
+
+## Imperative vs. Declarative
+In React - the flow of information is unidirectional. What does that mean?
+
+In the view, a user clicks a button, which updates state. Clicking the button has no effect whatsoever on the view - it only changes _state_. This causes a rerender, which means a new view is created based on the information in state. The information controls the presentation.
+
+The view should be a certain way given a certain state. State is central and a single update can affect multiple portions of the view. Whereas in imperative programming you may have to select individual items and update them accordingly.
+
+The downside is a lot of repeated work. Each time state changes, a new view is generated. Computationally, this is much more expensive than imperative programming. DOM manipulation is very expensive, so we want to touch as little of the DOM as possible. So how is React viable, then? *The virtual DOM!*
+
+What is a virtual dom?
+
+A virtual DOM is like the DOM, but it doesn't actually render to the screen. On every update, React looks at the virtual DOM, creates a diff with the real DOM, and makes the smallest possible change. It's not as fast as doing it manually, but it's much less likely to have bugs.

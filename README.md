@@ -67,3 +67,57 @@ The downside is a lot of repeated work. Each time state changes, a new view is g
 What is a virtual dom?
 
 A virtual DOM is like the DOM, but it doesn't actually render to the screen. On every update, React looks at the virtual DOM, creates a diff with the real DOM, and makes the smallest possible change. It's not as fast as doing it manually, but it's much less likely to have bugs.
+
+# Creating your own React project
+The most common way of starting any React project is to use the
+`create-react-app` command to bootstrap a folder structure. The tools you need
+are
+
+* `node`, a server-side javascript implementation (`brew install node`)
+* `npm`, the javascript package manager (`brew install npm`)
+* `npx`, like `npm`, but if you want to run one a node module without
+  installing it first (should be installed with `npm`)
+
+Let's make our own project, and start the development server
+
+```console
+$ npx create-react-app my_project
+<... lots of text ...>
+$ cd my_project
+$ npm run start
+```
+
+At this point, your browser should open up. If it doesn't, manually navigate to
+http://localhost:3000.
+
+![image of react app up and running](https://user-images.githubusercontent.com/2654835/74282190-91232a00-4cd4-11ea-8dcb-2a474ed7417a.png)
+
+Neat, but what just happened? `create-react-app` generated a project skeleton
+for us.
+
+```console
+$ tree -L 1
+.
+├── README.md
+├── node_modules
+├── package.json
+├── public
+├── src
+└── yarn.lock
+
+3 directories, 3 files
+```
+
+Running `npm run start` tells `npm` to look at the project manifest file
+(`package.json`) and run the `start` script defined there. In this case, the
+script points to `react-scripts start`
+
+```console
+$ grep start package.json
+    "start": "react-scripts start",
+```
+
+## Hot reloading and the virtual DOM
+Earlier we talked about the virtual DOM, and how it makes our lives easier. You
+can see this in action by editing `src/App.js`, making a change, and watching
+the browser update its contents without having to refresh.

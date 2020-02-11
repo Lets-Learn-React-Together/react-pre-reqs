@@ -120,4 +120,6 @@ $ grep start package.json
 ## Hot reloading and the virtual DOM
 Earlier we talked about the virtual DOM, and how it makes our lives easier. You
 can see this in action by editing `src/App.js`, making a change, and watching
-the browser update its contents without having to refresh.
+the browser update its contents without having to refresh. You can see this
+change taking place in real time if you open up the developer tools of your
+browser and flip to the Elements tab.

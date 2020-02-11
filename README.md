@@ -23,7 +23,7 @@ The 3 Main languages of the web are:
 ```
 Above is as basic an HTML framework as you can get. HTML is a semantic tag-based markup language. Tags are nested within each other. It's semantic because when you develop you should use the right tag for the job. You can make any HTML tag have any behavior you want, but this is an antipattern. If you want to have a link that takes you to a new webpage you could add some handy CSS and a JS click event to a paragraph element (`<p></p>`), but really you should use the anchor element (`<a></a>`).
 
-Check out a list of (all HTML tags)[https://www.w3schools.com/tags/]. This will come in handy when writing JSX in React components.
+Check out a list of !(all HTML tags)[https://www.w3schools.com/tags/]. This will come in handy when writing JSX in React components.
 
 ### CSS
 ![css gif](https://media0.giphy.com/media/13FrpeVH09Zrb2/source.gif)
